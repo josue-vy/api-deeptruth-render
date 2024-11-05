@@ -1,1 +1,14 @@
-myenv/
+# Ignorar el entorno virtual
+env/
+
+# Ignorar archivos de caché de PyTorch
+**/__pycache__/
+**/*.pyc
+**/torch_cache/
+**/*.pt
+**/*.pth
+
+# Ignorar archivos grandes de dependencias
+*.dll
+*.lib
+*.so

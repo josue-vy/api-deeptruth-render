@@ -1,6 +1,7 @@
 import torch
 from torchvision import transforms
 from PIL import Image
+import os
 import io
 
 class DeepFaceService:
@@ -12,6 +13,9 @@ class DeepFaceService:
         
         :param model_url: URL del modelo en PyTorch Hub.
         """
+        # Configura la caché de PyTorch para almacenar el modelo en un directorio específico
+        os.environ['TORCH_HOME'] = './src/torch_cache'
+
         # Cargar el modelo preentrenado de PyTorch Hub
         self.model = torch.hub.load('pytorch/vision', 'resnet18', pretrained=True)
         self.model.eval()

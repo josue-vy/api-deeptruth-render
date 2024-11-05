@@ -1,0 +1,1 @@
+from .faceController import consultFaceController
